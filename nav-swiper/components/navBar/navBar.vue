@@ -9,7 +9,7 @@
 					<uni-icons v-else @click="goBack()" type="arrowleft" :color="options.statusBarTextColor" size="22"></uni-icons>
 				</view>
 				<view class="navber-search" :style="{width:titleWidth+'px'}">
-					<swiper v-if='options.swiperList.length>0' :style="{width:titleWidth+'px',}" style="height:50rpx;text-align:center;" class="swiper-box flex flex-direction justify-between"
+					<swiper v-if='options.swiperList.length>0' :style="{width:titleWidth+'px',}" style="height:30px;line-height:30px;text-align:center;" class="swiper-box flex flex-direction justify-between"
 					 vertical :autoplay="options.swiperList.length>0" display-multiple-items="1" circular :interval="2000">
 						<swiper-item v-for="(item,index) in options.swiperList" :key="index" :style="{color:options.statusBarTextColor}" catchtouchmove='true'>
 							{{item}}
