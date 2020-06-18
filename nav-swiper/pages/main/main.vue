@@ -1,7 +1,8 @@
 <template>
 	<view class="content">
-		<!-- 自定义导航栏 -->
-		<navBar :options="options"></navBar> 
+		<search-box class="response" @search="onTabSearch"></search-box>
+		<swiper-box class="response margin-bottom-sm" :imgList="imgList"></swiper-box>
+		<radio-box class="response"></radio-box>
 		<image class="logo" src="/static/logo.png" @click="goToPage()"></image>
 	</view>
 </template>
@@ -10,12 +11,11 @@
 	export default {
 		data() {
 			return {
-				options: {
-					navBackground:"#f07373",
-					statusBarTextColor:'#ffffff', //仅支持 #ffffff or #000000
-					titleDefault:'商品详情',
-					swiperList: ['22222','3333333','3444444']
-				}
+				imgList:[
+					'https://fangxinoss.1fangxin.net/member/sources/5af7cf115e7f0.jpg',
+					'https://fangxinoss.1fangxin.net/member/source/5b36f22a6ace2.jpg',
+					'https://fangxinoss.1fangxin.net/member/sources/5af7cf115e7f0.jpg'
+				],
 			}
 		},
 		onLoad() {
@@ -25,6 +25,11 @@
 			console.log(e)
 		},
 		methods: {
+			onTabSearch(value){
+				uni.showToast({
+					title:value
+				})
+			},
 			getLabel(){
 				this.$api.get_label({
 					name:'get_label'
@@ -43,14 +48,16 @@
 	}
 </script>
 
-<style>
+<style lang="scss">
+	page{
+		background-color: #f5f5f5;
+	}
 	.content {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
 	}
-
 	.logo {
 		height: 200rpx;
 		width: 200rpx;

@@ -1,9 +1,7 @@
 <template>
 	<view>
-		<navBar :options="options"></navBar>
-		<view v-for="(item,index) in 100" :key="index">
-			{{item}} 详情页面
-		</view>
+		<!-- 自定义导航栏 -->
+		<navBar :options="options"></navBar> 
 	</view>
 </template>
 
@@ -12,17 +10,12 @@
 		data() {
 			return {
 				options: {
-					navBackground:"#ffffff",
-					statusBarTextColor:'#000000', //仅支持 #ffffff or #000000
+					navBackground:"#f07373",
+					statusBarTextColor:'#ffffff', //仅支持 #ffffff or #000000
 					titleDefault:'商品详情',
-					swiperList: []
+					swiperList: ['22222','3333333','3444444']
 				}
 			}
-		},
-		onLoad() {
-			setTimeout(()=>{
-				this.options.swiperList = ['222222','3333333','666666666']
-			},2000)
 		},
 		methods: {
 			
