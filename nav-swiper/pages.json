@@ -31,6 +31,18 @@
 				"navigationStyle":"custom"
 			}
         }
+        ,{
+            "path" : "pages/search-list/search-list",
+            "style" : {
+				"navigationBarTitleText": "商品列表"
+			}
+        }
+        ,{
+            "path" : "pages/search/search",
+            "style" : {
+				"navigationBarTitleText": "搜索"
+			}
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
@@ -78,6 +90,11 @@
 			{
 				"name": "首页", //模式名称
 				"path": "pages/index/index", //启动页面
+				"query": "" //启动参数
+			},
+			{
+				"name": "商品列表", //模式名称
+				"path": "pages/search-list/search-list", //启动页面
 				"query": "" //启动参数
 			}
 		]
