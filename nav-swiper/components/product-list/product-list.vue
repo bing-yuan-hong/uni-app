@@ -1,7 +1,7 @@
 <template>
 	<view class="bg-white padding product">
 		<view class="grid col-2 grid-square">
-			<view class="solid" v-for="(item,index) in list" :key="index">
+			<view class="solid" v-for="(item,index) in list" :key="index" @click="goToDetail(item)">
 				<view class="bg-img flex">
 					<image class="product-img" :src="item.path" mode="aspectFit"></image>
 				</view>
@@ -35,6 +35,12 @@
 			return {
 
 			};
+		},
+		methods:{
+			goToDetail(item){
+				this.$emit('goToDetail',item)
+			}
+			
 		}
 	}
 </script>

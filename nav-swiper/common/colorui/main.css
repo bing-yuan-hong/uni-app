@@ -2818,6 +2818,9 @@ scroll-view.cu-steps .cu-item {
 .flex-sub {
 	flex: 1;
 }
+.flex-shrink{
+	flex-shrink: 0;
+}
 
 .flex-twice {
 	flex: 2;
@@ -3084,6 +3087,9 @@ scroll-view.cu-steps .cu-item {
 	margin-bottom: 50upx;
 }
 
+.margin-left-auto{
+	margin-left: auto;
+}
 .margin-left-xs {
 	margin-left: 10upx;
 }

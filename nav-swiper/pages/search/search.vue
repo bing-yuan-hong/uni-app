@@ -1,9 +1,9 @@
 <template>
 	<view class="search-history bg-white">
 		<view class="flex home-header align-center">
-			<view v-if="!is_history" @click="showSelectModal" class="flex flex-twice flex-direction align-center justify-center padding-top-sm padding-left-sm">
+			<view v-if="!is_history" @click="showSelectModal" class="select-box flex flex-direction align-center justify-center padding-top-sm padding-left-sm">
 				<view class="cuIcon-sort icon-sort"></view>
-				<view class="sort-box">分类</view>
+				<view class="sort-box text-center">分类</view>
 			</view>
 			<search-box class="response" :isSearch=true @search="onTabSearch"></search-box>
 		</view>
@@ -137,11 +137,14 @@
 			}
 		}
 		.home-header{
+			.select-box{
+				flex-shrink: 0;
+			}
 			.icon-sort{
 				font-size: 20px;
 			}
 			.sort-box{
-				width: 25px;
+				width: 30px;
 			}
 		}
 		

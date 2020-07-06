@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<swiper class="swiper-box" :indicator-dots="true" :autoplay="true" circular indicator-active-color="#ffffff" :interval="5000" :duration="1000">
+		<swiper class="swiper-box" :style="{height: height+'px'}" :indicator-dots="indicatorDots" :autoplay="true" circular indicator-active-color="#ffffff" :interval="5000" :duration="1000">
 			<swiper-item v-for="(item,index) in imgList" :key="index">
 				<view class="swiper-item">
 					<image class="img-box" mode="aspectFill" :src="item"></image>
@@ -17,6 +17,14 @@
 			uniIcons
 		},
 		props:{
+			height:{
+				type:[Number,String],
+				default:180
+			},
+			indicatorDots:{
+				type:Boolean,
+				default:true
+			},
 			imgList:{
 				type:Array,
 				default(){
@@ -34,14 +42,10 @@
 
 <style lang="scss">
 	.swiper-box{
-		padding: 0 10px;
-		height: 180px;
 		background-color: #fff;
-		padding-top: 10px;
-		padding-bottom: 10px;
 		.swiper-item{
 			width: 100%;
-			height: 180px;
+			height: 100%;
 			.img-box{
 				height: 100%;
 			}

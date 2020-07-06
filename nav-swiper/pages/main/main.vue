@@ -1,9 +1,11 @@
 <template>
 	<view class="content">
 		<search-box class="response" :isSearch="false" @search="onTabSearch"></search-box>
-		<swiper-box class="response margin-bottom-sm" :imgList="imgList"></swiper-box>
+		<view class="padding-sm response bg-white margin-bottom-sm">
+			<swiper-box class="response margin-bottom-sm" :imgList="imgList"></swiper-box>
+		</view>
 		<radio-box class="response margin-bottom-sm"></radio-box>
-		<product-list class="response" :list="productList"></product-list>
+		<product-list class="response" :list="productList" @goToDetail = 'goToDetail'></product-list>
 	</view>
 </template>
 
@@ -17,16 +19,19 @@
 					'https://fangxinoss.1fangxin.net/member/sources/5af7cf115e7f0.jpg'
 				],
 				productList:[{
+					id:1,
 					path:'https://fangxinoss.1fangxin.net/member/sources/5af7cf115e7f0.jpg',
 					title:'使用uni-app框架开发，支持多端小程序,一键生成多端一键生成多端一键生成多端',
 					price:'1200'
 				},
 				{
+					id:2,
 					path:'https://fangxinoss.1fangxin.net/member/source/5b36f22a6ace2.jpg',
 					title:'使用uni-app框架开发，支持多端小程序,一键生成多端一键生成多端一键生成多端一键生成多端',
 					price:'1200'
 				},
 				{
+					id:3,
 					path:'https://fangxinoss.1fangxin.net/member/sources/5af7cf115e7f0.jpg',
 					title:'使用uni-app框架开发，支持多端小程序,一键生成多端一键生成多端一键生成多端一键生成多端',
 					price:'1200'
@@ -52,6 +57,12 @@
 					
 				}).catch((err)=>{
 					
+				})
+			},
+			goToDetail(item){
+				console.log(item)
+				uni.navigateTo({
+					url:'/pages/detail/detail?id='+item.id
 				})
 			}
 		}
